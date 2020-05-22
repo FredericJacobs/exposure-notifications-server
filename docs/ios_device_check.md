@@ -1,19 +1,12 @@
 # Exposure Notification Server
 
 ## Verifying iOS devices using DeviceCheck
+**Requirement**: Using the DeviceCheck API requires a valid and active Apple iOS Developer
+subscription.
 
-**Important: Using the DeviceCheck API requires a valid and active Apple iOS Developer
-subscription.**
+The [DeviceCheck API](https://developer.apple.com/documentation/devicecheck) lets you verify tokens you receive come from an authentic Apple device on which your app has been downloaded.
 
-Apple uses the [DeviceCheck API](https://developer.apple.com/documentation/devicecheck)
-to verify device integrity. As part of the DeviceCheck verification process, the
-server receives a token that is generated on the device to verify the iOS
-device.
-
-Requiring DeviceCheck is an optional (but strongly encouraged) configuration for
-iOS apps submitting requests to the server. When implemented correctly,
-DeviceCheck verifies that a request came from an authentic iOS device. This
-protection can help mitigate various attacks from a bad actor.
+The use of the DeviceCheck API in the context of Exposure Notifications is optional and left at the discretion of the Health Authority.
 
 When the server receives the `device_token` from an iOS device, it needs to
 communicate with Apple's servers to verify the authenticity of the token. This
